@@ -26,8 +26,13 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
-        User::factory(100)->create();
-        Category::factory(200)->create();
-        Todo::factory(500)->create();
+        User::factory()->create([
+            'name' => 'Muhamad Adri Muwaffaq Khamid', //Ganti dengan nama lengkap kamu
+            'email' => 'adri.example@mail.com', //Ganti dengan email kamu
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'is_admin' => false,
+        ]);
     }
 }
